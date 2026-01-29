@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b8lfgidaas1d4"]
+
+[ext_resource type="Texture2D" uid="uid://b2c7d3gcv8ahd" path="res://assets/Traps/Falling Platforms/Off.png" id="1_vovme"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f2ew8"]
+size = Vector2(32, 10)
+
+[node name="failing platform" type="AnimatableBody2D" unique_id=1939557724]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1373936573]
+texture = ExtResource("1_vovme")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=922801547]
+shape = SubResource("RectangleShape2D_f2ew8")
+one_way_collision = true

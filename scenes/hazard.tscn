@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://bc7fxwd51qfah"]
+
+[ext_resource type="Script" uid="uid://cnfa2mbcud63k" path="res://scripts/hazard.gd" id="1_awlwb"]
+[ext_resource type="Texture2D" uid="uid://b0yut1l1rmadv" path="res://assets/Traps/Saw/On (38x38).png" id="2_2d6m4"]
+[ext_resource type="PackedScene" uid="uid://bajxjlkmqojhk" path="res://scenes/killzone.tscn" id="3_2d6m4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6s6ot"]
+atlas = ExtResource("2_2d6m4")
+region = Rect2(0, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0kf5"]
+atlas = ExtResource("2_2d6m4")
+region = Rect2(38, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xe0r3"]
+atlas = ExtResource("2_2d6m4")
+region = Rect2(76, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ijc8"]
+atlas = ExtResource("2_2d6m4")
+region = Rect2(114, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ek0xu"]
+atlas = ExtResource("2_2d6m4")
+region = Rect2(152, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njv66"]
+atlas = ExtResource("2_2d6m4")
+region = Rect2(190, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mu0v1"]
+atlas = ExtResource("2_2d6m4")
+region = Rect2(228, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2gxaj"]
+atlas = ExtResource("2_2d6m4")
+region = Rect2(266, 0, 38, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4pufp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6s6ot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0kf5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xe0r3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ijc8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ek0xu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_njv66")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mu0v1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2gxaj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 70.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6s6ot"]
+radius = 20.22375
+
+[node name="hazard" type="Area2D" unique_id=38525193]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_awlwb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1906141029]
+sprite_frames = SubResource("SpriteFrames_4pufp")
+autoplay = "default"
+frame_progress = 0.032530617
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1751749133]
+shape = SubResource("CircleShape2D_6s6ot")
+
+[node name="killzone" parent="." unique_id=1098237611 instance=ExtResource("3_2d6m4")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=968048634]
+shape = SubResource("CircleShape2D_6s6ot")

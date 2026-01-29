@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bsgnt2aucp72x"]
+
+[ext_resource type="AudioStream" uid="uid://bfcasooaoutpe" path="res://previous assets/sounds/time_for_adventure.mp3" id="1_nbeep"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" unique_id=830762923]
+stream = ExtResource("1_nbeep")
+autoplay = true

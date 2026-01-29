@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dspeyesdtu42f"]
+
+[ext_resource type="Texture2D" uid="uid://dplgl5x2nu3hd" path="res://assets/Traps/Fire/On (16x32).png" id="1_5ltu8"]
+[ext_resource type="PackedScene" uid="uid://bajxjlkmqojhk" path="res://scenes/killzone.tscn" id="2_x6ecg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_icfi2"]
+atlas = ExtResource("1_5ltu8")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eo6dx"]
+atlas = ExtResource("1_5ltu8")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2yji"]
+atlas = ExtResource("1_5ltu8")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qjybw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_icfi2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eo6dx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2yji")
+}],
+"loop": true,
+"name": &"blowing",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f37y5"]
+size = Vector2(20, 30)
+
+[node name="Fire" type="Node2D" unique_id=1017320438]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1639013166]
+sprite_frames = SubResource("SpriteFrames_qjybw")
+animation = &"blowing"
+autoplay = "blowing"
+frame_progress = 0.59816355
+
+[node name="killzone" parent="." unique_id=1098237611 instance=ExtResource("2_x6ecg")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=1392082538]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_f37y5")

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b7ghn5oc18jvf"]
+
+[ext_resource type="Script" uid="uid://d0rf0mwefig12" path="res://trampoline_platform.gd" id="1_4kb0u"]
+[ext_resource type="Texture2D" uid="uid://bss5wgqxwhjjx" path="res://assets/Traps/Trampoline/Idle.png" id="2_4kb0u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aino7"]
+size = Vector2(25, 11.5)
+
+[node name="trampoline platform" type="Area2D" unique_id=1623086197]
+position = Vector2(-1, -3)
+scale = Vector2(2, 2)
+script = ExtResource("1_4kb0u")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1780950616]
+texture = ExtResource("2_4kb0u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1564995699]
+position = Vector2(-0.5, 8.75)
+shape = SubResource("RectangleShape2D_aino7")
